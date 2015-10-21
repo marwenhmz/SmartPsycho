@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package smartpsycho;
+package com.esprit.gui;
 
 /**
  *
@@ -55,8 +55,6 @@ public class Authentification extends javax.swing.JFrame {
         jButton2.setText("S'inscrire");
 
         jButton3.setText("Quitter");
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\lenov\\Desktop\\SP.PNG")); // NOI18N
 
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

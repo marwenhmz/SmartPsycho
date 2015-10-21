@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package smartpsycho;
+package com.esprit.gui;
 
 import com.esprit.dao.PatientDAO;
-import com.esprit.entite.Patient;
+import com.esprit.entities.Patient;
 import java.sql.SQLException;
 
 /**

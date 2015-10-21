@@ -5,8 +5,8 @@
  */
 package com.esprit.dao;
 
-import com.esprit.entite.Patient;
-import com.esprit.technique.ConnectionBd;
+import com.esprit.entities.Patient;
+import com.esprit.util.ConnectionBd;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
