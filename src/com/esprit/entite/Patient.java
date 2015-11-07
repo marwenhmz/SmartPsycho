@@ -17,7 +17,11 @@ public class Patient {
     public int age_patient ;
     public int cin_patient ;
     public String pwd_patient;
-   
+    public int tel_patient ;
+    public String email_patient ;
+
+    public Patient() {
+    }
 
     public int getId_patient() {
         return id_patient;
@@ -37,6 +41,18 @@ public class Patient {
 
     public int getCin_patient() {
         return cin_patient;
+    }
+
+    public String getPwd_patient() {
+        return pwd_patient;
+    }
+
+    public int getTel_patient() {
+        return tel_patient;
+    }
+
+    public String getEmail_patient() {
+        return email_patient;
     }
 
     public void setId_patient(int id_patient) {
@@ -59,15 +75,18 @@ public class Patient {
         this.cin_patient = cin_patient;
     }
 
-    @Override
-    public String toString() {
-        return "Patient{" + "id_patient=" + id_patient + ", nom_patient=" + nom_patient + ", prenom_patient=" + prenom_patient + ", age_patient=" + age_patient + ", cin_patient=" + cin_patient + '}';
+    public void setPwd_patient(String pwd_patient) {
+        this.pwd_patient = pwd_patient;
     }
 
-    public void setPwd_patient(String pwd) {
-        this.pwd_patient = pwd;
+    public void setTel_patient(int tel_patient) {
+        this.tel_patient = tel_patient;
     }
-    
-    
+
+    public void setEmail_patient(String email_patient) {
+        this.email_patient = email_patient;
+    }
+
+  
         
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.esprit.DAO;
+package com.esprit.dao;
 
 import com.esprit.util.ConnectionBd;
 import java.sql.Connection;
@@ -13,19 +13,20 @@ import java.sql.Statement;
 
 /**
  *
- * @author Wassim
+ * @author lenov
  */
-public class PsyDAO {
+public class AdminDAO {
     Connection cnx;
     String requete;
     
     
-    public PsyDAO(){
+    public AdminDAO(){
         cnx = ConnectionBd.getInstance();
         
     }
-     public int findPsyByLoginAndPwd(String login,String pwd) {
-        String requete="SELECT * FROM psychologue WHERE  login_psy= '"+login +"' AND pwd_psy= '"+pwd+"'";
+    
+     public int findAdminByLoginAndPwd(String login,String pwd) {
+        requete="SELECT * FROM admin WHERE  login_admin= '"+login +"' AND pwd_admin= '"+pwd+"'";
          int p=0;
         try {
           Statement  st = cnx.createStatement();
@@ -39,6 +40,5 @@ public class PsyDAO {
         }
         return p;
     }
-    
     
 }
