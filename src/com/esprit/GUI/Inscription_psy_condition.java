@@ -1,20 +1,14 @@
 package com.esprit.GUI;
 
 
-
-
-
-
-
-
 import com.esprit.DAO.PsyDAO;
 import com.esprit.entite.Psy;
-import java.io.IOException;
-import java.sql.ResultSet;
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
 import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -32,7 +26,7 @@ public class Inscription_psy_condition extends javax.swing.JFrame {
      * Creates new form inscription_patient
      */
    
-    DefaultTableModel model = new DefaultTableModel();
+   
     
     public Inscription_psy_condition() {
         initComponents();
@@ -49,31 +43,33 @@ public class Inscription_psy_condition extends javax.swing.JFrame {
 
         label1 = new java.awt.Label();
         jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtno = new javax.swing.JTextField();
-        txtid = new javax.swing.JTextField();
-        txtpr = new javax.swing.JTextField();
-        txtcin = new javax.swing.JTextField();
-        txtage = new javax.swing.JTextField();
+        nom = new javax.swing.JTextField();
+        prenom = new javax.swing.JTextField();
+        cin = new javax.swing.JTextField();
+        age = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        txtville = new javax.swing.JTextField();
+        email = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txttel = new javax.swing.JTextField();
+        tel = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        txtemail = new javax.swing.JTextField();
+        diplome = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        pwd = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
+        confpwd = new javax.swing.JPasswordField();
+        jLabel10 = new javax.swing.JLabel();
+        ville = new javax.swing.JTextField();
+        inscrir = new javax.swing.JButton();
+        accueil = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
 
         label1.setText("label1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel4.setText("id           :");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setText("Nom       :");
@@ -87,38 +83,31 @@ public class Inscription_psy_condition extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setText("Age         :");
 
-        txtno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtno.addActionListener(new java.awt.event.ActionListener() {
+        nom.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtnoActionPerformed(evt);
+                nomActionPerformed(evt);
             }
         });
 
-        txtid.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtid.addActionListener(new java.awt.event.ActionListener() {
+        prenom.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        prenom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtidActionPerformed(evt);
+                prenomActionPerformed(evt);
             }
         });
 
-        txtpr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtpr.addActionListener(new java.awt.event.ActionListener() {
+        cin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtprActionPerformed(evt);
+                cinActionPerformed(evt);
             }
         });
 
-        txtcin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtcin.addActionListener(new java.awt.event.ActionListener() {
+        age.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        age.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcinActionPerformed(evt);
-            }
-        });
-
-        txtage.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtage.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtageActionPerformed(evt);
+                ageActionPerformed(evt);
             }
         });
 
@@ -126,35 +115,48 @@ public class Inscription_psy_condition extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("Prenom   :");
 
-        txtville.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtville.addActionListener(new java.awt.event.ActionListener() {
+        email.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtvilleActionPerformed(evt);
+                emailActionPerformed(evt);
             }
         });
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setText("Tel         :");
 
-        txttel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txttel.addActionListener(new java.awt.event.ActionListener() {
+        tel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txttelActionPerformed(evt);
+                telActionPerformed(evt);
             }
         });
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setText("Email     :");
 
-        txtemail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtemail.addActionListener(new java.awt.event.ActionListener() {
+        diplome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        diplome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtemailActionPerformed(evt);
+                diplomeActionPerformed(evt);
             }
         });
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel9.setText("Diplome   :");
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel4.setText("Password :");
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel10.setText("Confirm pwd :");
+
+        ville.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        ville.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                villeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -163,88 +165,102 @@ public class Inscription_psy_condition extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtno, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtpr, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                                    .addComponent(txtcin, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtid, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtage))))
-                        .addGap(24, 138, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtville, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                            .addComponent(txttel)
-                            .addComponent(txtemail, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE))
-                        .addGap(138, 138, 138))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(email, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tel, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ville, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(confpwd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(pwd, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(age, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cin, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(prenom, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nom, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(diplome))))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtno, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtpr, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pwd, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(confpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtcin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtage, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtville, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(11, 11, 11)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(ville, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txttel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(diplome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 14, Short.MAX_VALUE))
         );
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton1.setText("S'inscrire");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        inscrir.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        inscrir.setText("S'inscrire");
+        inscrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                inscrirActionPerformed(evt);
+            }
+        });
+
+        accueil.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        accueil.setText("Accueil");
+        accueil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accueilActionPerformed(evt);
+            }
+        });
+
+        exit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        exit.setText("Exit");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
             }
         });
 
@@ -255,9 +271,12 @@ public class Inscription_psy_condition extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(inscrir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(accueil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,133 +286,112 @@ public class Inscription_psy_condition extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(215, 215, 215))
+                .addComponent(inscrir, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(accueil, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnoActionPerformed
+    private void nomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomActionPerformed
            // TODO add your handling code here:
-    }//GEN-LAST:event_txtnoActionPerformed
+    }//GEN-LAST:event_nomActionPerformed
 
-    private void txtidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidActionPerformed
+    private void villeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_villeActionPerformed
      // TODO add your handling code here:
-    }//GEN-LAST:event_txtidActionPerformed
+    }//GEN-LAST:event_villeActionPerformed
 
-    private void txtprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtprActionPerformed
+    private void prenomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prenomActionPerformed
           // TODO add your handling code here:
-    }//GEN-LAST:event_txtprActionPerformed
+    }//GEN-LAST:event_prenomActionPerformed
 
-    private void txtcinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcinActionPerformed
+    private void cinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cinActionPerformed
             // TODO add your handling code here:
-    }//GEN-LAST:event_txtcinActionPerformed
+    }//GEN-LAST:event_cinActionPerformed
 
-    private void txtageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtageActionPerformed
+    private void ageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageActionPerformed
                // TODO add your handling code here:
-    }//GEN-LAST:event_txtageActionPerformed
+    }//GEN-LAST:event_ageActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Psy p =new Psy();
-        p.setId_psy(0);
-        p.setLogin_psy(txtno.getText());
-        p.setPwd_psy(null);
-        p.setSpecialite(null);
-        PsyDAO pdao=new PsyDAO();
-//String prenom_psy=txtpr.getText();
-//
-//String cin_psy=txtcin.getText();
-//String age_psy=txtage.getText();
-//String ville_psy=txtville.getText();
-//String tel_psy=txttel.getText();
-//String email_psy=txtemail.getText();
-//
-//
-//String req="INSERT INTO psy(id_psy,nom_psy,prenom_psy,cin_psy,age_psy ,ville_psy ,tel_psy ,email_psy)VALUES('"+id_psy+
-//        "','"+nom_psy+"','"+prenom_psy+"','"+cin_psy+"','"+age_psy+"','"+ville_psy+"' ,'"+tel_psy+"' , '"+email_psy+"')";
-//try { stmn=cnx.getInstance().createStatement();
-////stm.executeQuery(req);
-//stmn.executeUpdate(req);
-JOptionPane.showMessageDialog(null,"psy ajouté");
-//txtid.setText("");
-//txtno.setText("");
-//txtpr.setText("");
-//txtcin.setText("");
-//txtage.setText("");
-//txtville.setText("");
-//txttel.setText("");
-//txtemail.setText("");
-//}
-//catch(SQLException e){System.err.println(e);
-//JOptionPane.showMessageDialog(null,"veuillez changer le num id parce que est déja attribue pour un autre psy ");
-//}
-//    
+    private void inscrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inscrirActionPerformed
+     PsyDAO pdao=new PsyDAO();
+     if(! pdao.findPsyByCin(Integer.parseInt(cin.getText()))){   
+       if(! pdao.findPsyByEmail(email.getText())){ 
+          if(pwd.getText().equals(confpwd.getText())){ 
+              Psy p =new Psy();
+              p.setId_psy(0);
+              p.setNom_psy(nom.getText());
+              p.setPrenom_psy(prenom.getText());
+              p.setCin_psy(Integer.parseInt(cin.getText()));
+              p.setAge_psy(Integer.parseInt(age.getText()));
+              p.setPwd_psy(confpwd.getText());
+              p.setVille(ville.getText());
+              p.setTel_psy(Integer.parseInt(tel.getText()));
+              p.setEmail_psy(email.getText());
+              p.setDiplome(diplome.getText());
+              try {
+                  pdao.insertPsy(p);
+              } catch (SQLException ex) {
+                  System.out.println(ex);
+              }
+             JOptionPane.showMessageDialog(null,"psy ajouté");
+             }else{
+              JOptionPane.showMessageDialog(null,"password incorrect");
+             }
+         }else{
+          JOptionPane.showMessageDialog(null,"email existe deja");
+         }
+     }else{
+         JOptionPane.showMessageDialog(null,"cin existe deja");
+     }
+    }//GEN-LAST:event_inscrirActionPerformed
 
-
-
-
-
-
-
-
-                                          
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void txtvilleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtvilleActionPerformed
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtvilleActionPerformed
+    }//GEN-LAST:event_emailActionPerformed
 
-    private void txttelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttelActionPerformed
+    private void telActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txttelActionPerformed
+    }//GEN-LAST:event_telActionPerformed
 
-    private void txtemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtemailActionPerformed
+    private void diplomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diplomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtemailActionPerformed
+    }//GEN-LAST:event_diplomeActionPerformed
+
+    private void accueilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accueilActionPerformed
+       Accueil ac =new Accueil();
+       ac.setVisible(true);
+       close();
+    }//GEN-LAST:event_accueilActionPerformed
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+    close();
+        
+    }//GEN-LAST:event_exitActionPerformed
+ public void close(){
+        WindowEvent winClosingEvent =new WindowEvent(this, WindowEvent.WINDOW_CLOSING );
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
+    }
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Inscription_psy_condition.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Inscription_psy_condition.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Inscription_psy_condition.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Inscription_psy_condition.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Inscription_psy_condition().setVisible(true);
-            }
-        });
-    }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton accueil;
+    private javax.swing.JTextField age;
+    private javax.swing.JTextField cin;
+    private javax.swing.JPasswordField confpwd;
+    private javax.swing.JTextField diplome;
+    private javax.swing.JTextField email;
+    private javax.swing.JButton exit;
+    private javax.swing.JButton inscrir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -404,13 +402,10 @@ JOptionPane.showMessageDialog(null,"psy ajouté");
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private java.awt.Label label1;
-    private javax.swing.JTextField txtage;
-    private javax.swing.JTextField txtcin;
-    private javax.swing.JTextField txtemail;
-    private javax.swing.JTextField txtid;
-    private javax.swing.JTextField txtno;
-    private javax.swing.JTextField txtpr;
-    private javax.swing.JTextField txttel;
-    private javax.swing.JTextField txtville;
+    private javax.swing.JTextField nom;
+    private javax.swing.JTextField prenom;
+    private javax.swing.JPasswordField pwd;
+    private javax.swing.JTextField tel;
+    private javax.swing.JTextField ville;
     // End of variables declaration//GEN-END:variables
 }

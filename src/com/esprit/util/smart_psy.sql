@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 06 Novembre 2015 à 22:57
+-- Généré le :  Sam 07 Novembre 2015 à 21:53
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -71,17 +71,23 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `cin_patient` int(8) NOT NULL,
   `age_patient` int(11) NOT NULL,
   `pwd_patient` varchar(30) NOT NULL,
+  `tel_patient` int(11) NOT NULL,
+  `email_patient` varchar(30) NOT NULL,
   PRIMARY KEY (`id_patient`),
   UNIQUE KEY `id_patient` (`id_patient`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Contenu de la table `patient`
 --
 
-INSERT INTO `patient` (`id_patient`, `nom_patient`, `prenom_patient`, `cin_patient`, `age_patient`, `pwd_patient`) VALUES
-(1, 'marwen', 'hamza', 9391891, 25, 'marwen'),
-(4, 'siwar', 'brjeb', 25245545, 23, 'siwar');
+INSERT INTO `patient` (`id_patient`, `nom_patient`, `prenom_patient`, `cin_patient`, `age_patient`, `pwd_patient`, `tel_patient`, `email_patient`) VALUES
+(1, 'marwen', 'hamza', 9391891, 25, 'marwen', 0, ''),
+(4, 'siwar', 'brjeb', 25245545, 23, 'siwar', 0, ''),
+(5, 'mm', 'hh', 99, 25, 'marwen', 55, 'gg'),
+(6, 'mmm', 'hhh', 99, 25, 'mmm', 555, 'ggg'),
+(7, 'mmmm', 'hhhh', 0, 25, 'marwen', 5555, 'gggg'),
+(8, 'mmrt', 'erz', 999999, 25, 'marwen', 55, 'ggrsthdfger');
 
 -- --------------------------------------------------------
 
@@ -91,19 +97,26 @@ INSERT INTO `patient` (`id_patient`, `nom_patient`, `prenom_patient`, `cin_patie
 
 CREATE TABLE IF NOT EXISTS `psychologue` (
   `id_psy` int(5) NOT NULL AUTO_INCREMENT,
-  `login_psy` varchar(20) NOT NULL,
+  `prenom_psy` varchar(20) NOT NULL,
+  `nom_psy` varchar(20) NOT NULL,
+  `cin_psy` int(11) NOT NULL,
+  `age_psy` int(11) NOT NULL,
   `pwd_psy` varchar(20) NOT NULL,
-  `specialite` varchar(20) NOT NULL,
+  `ville` varchar(20) NOT NULL,
+  `tel_psy` int(11) NOT NULL,
+  `email_psy` varchar(30) NOT NULL,
+  `diplome` varchar(20) NOT NULL,
   PRIMARY KEY (`id_psy`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `psychologue`
 --
 
-INSERT INTO `psychologue` (`id_psy`, `login_psy`, `pwd_psy`, `specialite`) VALUES
-(1, 'hamza', 'hamza', 'kannibalisme'),
-(2, 'berjab', 'berjab', 'makhdemch');
+INSERT INTO `psychologue` (`id_psy`, `prenom_psy`, `nom_psy`, `cin_psy`, `age_psy`, `pwd_psy`, `ville`, `tel_psy`, `email_psy`, `diplome`) VALUES
+(1, '', 'hamza', 0, 0, 'hamza', '0', 0, '', ''),
+(2, '', 'berjab', 0, 0, 'berjab', '0', 0, '', ''),
+(3, 'hamza', 'hamza', 99, 25, 'marwen', 'mahdia', 55, 'gg', 'sqgdx');
 
 -- --------------------------------------------------------
 
