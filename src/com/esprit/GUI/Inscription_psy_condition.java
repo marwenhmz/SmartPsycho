@@ -6,8 +6,6 @@ import com.esprit.entite.Psy;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /*
@@ -43,120 +41,126 @@ public class Inscription_psy_condition extends javax.swing.JFrame {
 
         label1 = new java.awt.Label();
         jPanel1 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        nom = new javax.swing.JTextField();
-        prenom = new javax.swing.JTextField();
-        cin = new javax.swing.JTextField();
-        age = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        email = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        tel = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        diplome = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        pwd = new javax.swing.JPasswordField();
-        jLabel4 = new javax.swing.JLabel();
-        confpwd = new javax.swing.JPasswordField();
-        jLabel10 = new javax.swing.JLabel();
-        ville = new javax.swing.JTextField();
+        nom = new javax.swing.JLabel();
+        ville = new javax.swing.JLabel();
+        cin = new javax.swing.JLabel();
+        age = new javax.swing.JLabel();
+        jNom = new javax.swing.JTextField();
+        jPrenom = new javax.swing.JTextField();
+        jCin = new javax.swing.JTextField();
+        jAge = new javax.swing.JTextField();
+        prenom = new javax.swing.JLabel();
+        jEmail = new javax.swing.JTextField();
+        tel = new javax.swing.JLabel();
+        jTel = new javax.swing.JTextField();
+        email = new javax.swing.JLabel();
+        jDiplome = new javax.swing.JTextField();
+        diplome = new javax.swing.JLabel();
+        jPwd = new javax.swing.JPasswordField();
+        pwd = new javax.swing.JLabel();
+        jConfPwd = new javax.swing.JPasswordField();
+        confpwd = new javax.swing.JLabel();
+        jVille = new javax.swing.JTextField();
+        jLogin = new javax.swing.JTextField();
+        login = new javax.swing.JLabel();
         inscrir = new javax.swing.JButton();
         accueil = new javax.swing.JButton();
         exit = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
 
         label1.setText("label1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel5.setText("Nom       :");
+        nom.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        nom.setText(" Nom          :");
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel1.setText("Ville       :");
+        ville.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        ville.setText("Ville             :");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel2.setText("Cin          :");
+        cin.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        cin.setText("Cin             :");
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel3.setText("Age         :");
+        age.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        age.setText("Age             :");
 
-        nom.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        nom.addActionListener(new java.awt.event.ActionListener() {
+        jNom.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jNom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomActionPerformed(evt);
+                jNomActionPerformed(evt);
             }
         });
 
-        prenom.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        prenom.addActionListener(new java.awt.event.ActionListener() {
+        jPrenom.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPrenom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                prenomActionPerformed(evt);
+                jPrenomActionPerformed(evt);
             }
         });
 
-        cin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        cin.addActionListener(new java.awt.event.ActionListener() {
+        jCin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jCin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cinActionPerformed(evt);
+                jCinActionPerformed(evt);
             }
         });
 
-        age.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        age.addActionListener(new java.awt.event.ActionListener() {
+        jAge.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ageActionPerformed(evt);
+                jAgeActionPerformed(evt);
             }
         });
 
-        jLabel6.setBackground(new java.awt.Color(255, 153, 153));
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel6.setText("Prenom   :");
+        prenom.setBackground(new java.awt.Color(255, 153, 153));
+        prenom.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        prenom.setText("Prenom      :");
 
-        email.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        email.addActionListener(new java.awt.event.ActionListener() {
+        jEmail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
+                jEmailActionPerformed(evt);
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel7.setText("Tel         :");
+        tel.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        tel.setText("Tel               :");
 
-        tel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tel.addActionListener(new java.awt.event.ActionListener() {
+        jTel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                telActionPerformed(evt);
+                jTelActionPerformed(evt);
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel8.setText("Email     :");
+        email.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        email.setText("Email           :");
 
-        diplome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        diplome.addActionListener(new java.awt.event.ActionListener() {
+        jDiplome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jDiplome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                diplomeActionPerformed(evt);
+                jDiplomeActionPerformed(evt);
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel9.setText("Diplome   :");
+        diplome.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        diplome.setText("Diplome       :");
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel4.setText("Password :");
+        pwd.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        pwd.setText("Password     :");
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel10.setText("Confirm pwd :");
+        confpwd.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        confpwd.setText("Confirm pwd :");
 
-        ville.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        ville.addActionListener(new java.awt.event.ActionListener() {
+        jVille.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jVille.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                villeActionPerformed(evt);
+                jVilleActionPerformed(evt);
             }
         });
+
+        login.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        login.setText("Login          :");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -165,79 +169,82 @@ public class Inscription_psy_condition extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(email, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tel, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ville, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(confpwd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(pwd, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(age, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cin, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(prenom, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nom, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(diplome))))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(nom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(prenom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(age, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pwd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(confpwd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ville, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(diplome, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tel, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLogin)
+                    .addComponent(jEmail)
+                    .addComponent(jTel)
+                    .addComponent(jVille)
+                    .addComponent(jConfPwd, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(jPwd)
+                    .addComponent(jAge)
+                    .addComponent(jCin)
+                    .addComponent(jPrenom)
+                    .addComponent(jNom)
+                    .addComponent(jDiplome, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(127, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jNom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pwd, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(confpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLogin)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(ville, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+                        .addGap(9, 9, 9)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jAge, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPwd, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pwd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(diplome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 14, Short.MAX_VALUE))
+                    .addComponent(jConfPwd, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(confpwd, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jVille, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ville, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jDiplome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(diplome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30))
         );
 
         inscrir.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -264,75 +271,84 @@ public class Inscription_psy_condition extends javax.swing.JFrame {
             }
         });
 
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel11.setText("Inscription Psychologue");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(inscrir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(accueil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(30, 30, 30))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(inscrir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(accueil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(30, 30, 30))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(22, 22, 22)
+                .addComponent(jLabel11)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(inscrir, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(accueil, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomActionPerformed
+    private void jNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNomActionPerformed
            // TODO add your handling code here:
-    }//GEN-LAST:event_nomActionPerformed
+    }//GEN-LAST:event_jNomActionPerformed
 
-    private void villeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_villeActionPerformed
+    private void jVilleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVilleActionPerformed
      // TODO add your handling code here:
-    }//GEN-LAST:event_villeActionPerformed
+    }//GEN-LAST:event_jVilleActionPerformed
 
-    private void prenomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prenomActionPerformed
+    private void jPrenomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPrenomActionPerformed
           // TODO add your handling code here:
-    }//GEN-LAST:event_prenomActionPerformed
+    }//GEN-LAST:event_jPrenomActionPerformed
 
-    private void cinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cinActionPerformed
+    private void jCinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCinActionPerformed
             // TODO add your handling code here:
-    }//GEN-LAST:event_cinActionPerformed
+    }//GEN-LAST:event_jCinActionPerformed
 
-    private void ageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageActionPerformed
+    private void jAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAgeActionPerformed
                // TODO add your handling code here:
-    }//GEN-LAST:event_ageActionPerformed
+    }//GEN-LAST:event_jAgeActionPerformed
 
     private void inscrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inscrirActionPerformed
      PsyDAO pdao=new PsyDAO();
-     if(! pdao.findPsyByCin(Integer.parseInt(cin.getText()))){   
-       if(! pdao.findPsyByEmail(email.getText())){ 
-          if(pwd.getText().equals(confpwd.getText())){ 
+      if(! pdao.findLogin(jLogin.getText())){
+     if(! pdao.findPsyByCin(Integer.parseInt(jCin.getText()))){   
+       if(! pdao.findPsyByEmail(jEmail.getText())){ 
+          if(jPwd.getText().equals(jConfPwd.getText())){ 
               Psy p =new Psy();
               p.setId_psy(0);
-              p.setNom_psy(nom.getText());
-              p.setPrenom_psy(prenom.getText());
-              p.setCin_psy(Integer.parseInt(cin.getText()));
-              p.setAge_psy(Integer.parseInt(age.getText()));
-              p.setPwd_psy(confpwd.getText());
-              p.setVille(ville.getText());
-              p.setTel_psy(Integer.parseInt(tel.getText()));
-              p.setEmail_psy(email.getText());
-              p.setDiplome(diplome.getText());
+              p.setNom_psy(jNom.getText());
+              p.setPrenom_psy(jPrenom.getText());
+              p.setLogin(jLogin.getText());
+              p.setCin_psy(Integer.parseInt(jCin.getText()));
+              p.setAge_psy(Integer.parseInt(jAge.getText()));
+              p.setPwd_psy(jConfPwd.getText());
+              p.setVille(jVille.getText());
+              p.setTel_psy(Integer.parseInt(jTel.getText()));
+              p.setEmail_psy(jEmail.getText());
+              p.setDiplome(jDiplome.getText());
               try {
                   pdao.insertPsy(p);
               } catch (SQLException ex) {
@@ -348,19 +364,22 @@ public class Inscription_psy_condition extends javax.swing.JFrame {
      }else{
          JOptionPane.showMessageDialog(null,"cin existe deja");
      }
+      }else{
+          JOptionPane.showMessageDialog(null,"Login existe deja");
+      }
     }//GEN-LAST:event_inscrirActionPerformed
 
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+    private void jEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
+    }//GEN-LAST:event_jEmailActionPerformed
 
-    private void telActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telActionPerformed
+    private void jTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_telActionPerformed
+    }//GEN-LAST:event_jTelActionPerformed
 
-    private void diplomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diplomeActionPerformed
+    private void jDiplomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDiplomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_diplomeActionPerformed
+    }//GEN-LAST:event_jDiplomeActionPerformed
 
     private void accueilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accueilActionPerformed
        Accueil ac =new Accueil();
@@ -383,29 +402,32 @@ public class Inscription_psy_condition extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton accueil;
-    private javax.swing.JTextField age;
-    private javax.swing.JTextField cin;
-    private javax.swing.JPasswordField confpwd;
-    private javax.swing.JTextField diplome;
-    private javax.swing.JTextField email;
+    private javax.swing.JLabel age;
+    private javax.swing.JLabel cin;
+    private javax.swing.JLabel confpwd;
+    private javax.swing.JLabel diplome;
+    private javax.swing.JLabel email;
     private javax.swing.JButton exit;
     private javax.swing.JButton inscrir;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField jAge;
+    private javax.swing.JTextField jCin;
+    private javax.swing.JPasswordField jConfPwd;
+    private javax.swing.JTextField jDiplome;
+    private javax.swing.JTextField jEmail;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JTextField jLogin;
+    private javax.swing.JTextField jNom;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jPrenom;
+    private javax.swing.JPasswordField jPwd;
+    private javax.swing.JTextField jTel;
+    private javax.swing.JTextField jVille;
     private java.awt.Label label1;
-    private javax.swing.JTextField nom;
-    private javax.swing.JTextField prenom;
-    private javax.swing.JPasswordField pwd;
-    private javax.swing.JTextField tel;
-    private javax.swing.JTextField ville;
+    private javax.swing.JLabel login;
+    private javax.swing.JLabel nom;
+    private javax.swing.JLabel prenom;
+    private javax.swing.JLabel pwd;
+    private javax.swing.JLabel tel;
+    private javax.swing.JLabel ville;
     // End of variables declaration//GEN-END:variables
 }

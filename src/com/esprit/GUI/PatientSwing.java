@@ -34,10 +34,14 @@ public class PatientSwing extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
-        passTest = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        test = new javax.swing.JMenu();
+        passerTest = new javax.swing.JMenuItem();
+        testAffecter = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(700, 600));
         getContentPane().setLayout(null);
 
         jMenu3.setText("Profil    ");
@@ -49,40 +53,46 @@ public class PatientSwing extends javax.swing.JFrame {
         jMenu8.setText("noter un psy");
         jMenuBar1.add(jMenu8);
 
-        passTest.setText("passer un test       ");
-        passTest.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                passTestMenuSelected(evt);
-            }
-        });
-        passTest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passTestActionPerformed(evt);
-            }
-        });
-        jMenuBar1.add(passTest);
-
         jMenu7.setText("Contacter Psy       ");
         jMenuBar1.add(jMenu7);
+
+        jMenu1.setText("Diagnostique");
+        jMenuBar1.add(jMenu1);
+
+        test.setText("Tests");
+
+        passerTest.setText("Passer Test");
+        passerTest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passerTestActionPerformed(evt);
+            }
+        });
+        test.add(passerTest);
+
+        testAffecter.setText("Test Affecter");
+        testAffecter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                testAffecterActionPerformed(evt);
+            }
+        });
+        test.add(testAffecter);
+
+        jMenuBar1.add(test);
 
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void passTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passTestActionPerformed
-       
-    }//GEN-LAST:event_passTestActionPerformed
-
-    private void passTestMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_passTestMenuSelected
- ListTests lt=new ListTests();
+    private void passerTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passerTestActionPerformed
+        ListTests lt=new ListTests();
         lt.setVisible(true);
         close();
-    }//GEN-LAST:event_passTestMenuSelected
+    }//GEN-LAST:event_passerTestActionPerformed
+
+    private void testAffecterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testAffecterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_testAffecterActionPerformed
     public void close(){
         WindowEvent winClosingEvent =new WindowEvent(this, WindowEvent.WINDOW_CLOSING );
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
@@ -123,11 +133,14 @@ public class PatientSwing extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu passTest;
+    private javax.swing.JMenuItem passerTest;
+    private javax.swing.JMenu test;
+    private javax.swing.JMenuItem testAffecter;
     // End of variables declaration//GEN-END:variables
 }

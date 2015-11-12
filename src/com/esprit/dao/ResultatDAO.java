@@ -5,7 +5,6 @@
  */
 package com.esprit.dao;
 
-import com.esprit.entite.Question;
 import com.esprit.entite.Resultat;
 import com.esprit.util.ConnectionBd;
 import java.sql.Connection;
@@ -15,7 +14,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  *
@@ -37,22 +35,19 @@ public class ResultatDAO {
             st.executeUpdate(requete);
             System.out.println("Insertion effectué");
     }
-//    public void updateResultat(Resultat p) {
-//       requete = "UPDATE resultat SET id_resultat=?, id_question=?,id_patient=?,id_test=?,result=?  WHERE id="+p.getId_resultat()  ;
-//        try {
-//            PreparedStatement pst = cnx.prepareStatement(requete);
-//            pst.setInt(1, p.getId_resultat());
-//            pst.setInt(1, p.getId_question());
-//            pst.setInt(1, p.getId_patient());
-//            pst.setInt(1, p.getId_test());
-//            pst.setString(2, p.getResult());           
-//           
-//            pst.executeUpdate();
-//            System.out.println("Modification réussite");
-//        } catch (SQLException ex) {
-//            System.out.println("erreur de modification");       
-//        }
-//    }
+    public void updateResultat(Resultat p) {
+       requete = "UPDATE resultat SET result=?  WHERE id_question= "+p.getId_question()  ;
+        try {
+            PreparedStatement pst = cnx.prepareStatement(requete);
+            
+            pst.setString(1, p.getResult());           
+           
+            pst.executeUpdate();
+            System.out.println("Modification réussite");
+        } catch (SQLException ex) {
+            System.out.println("erreur de modification");       
+        }
+    }
 //     public void delateResultat(Resultat p) {
 //        requete="DELETE FROM resultat WHERE id="+p.getId_resultat();
 //        try {
@@ -83,6 +78,21 @@ public class ResultatDAO {
             System.out.println("erreur recherche"+ex);      
         }
         return maList;
+    }
+         public boolean findResultatByIds(int id_patient, int id_test,int id_question) {
+        requete = "SELECT * FROM resultat WHERE  id_patient= "+id_patient+" AND id_test= "+id_test+ " AND id_question= "+id_question ;
+         boolean find=false ;
+        try {
+          Statement  st = cnx.createStatement();
+            ResultSet rs=st.executeQuery(requete);
+             
+             while(rs.next()){
+            find = true ;
+            }
+        } catch (SQLException ex) {
+            System.out.println("erreur recherche"+ex);      
+        }
+        return find;
     }
 //      public  List<Resultat> afficheResultats() {
 //         List<Resultat> maList = new ArrayList<>();

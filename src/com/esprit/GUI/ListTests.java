@@ -62,8 +62,6 @@ public class ListTests extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tableTests = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        test = new javax.swing.JTextField();
         passer = new javax.swing.JButton();
         quitter = new javax.swing.JButton();
 
@@ -81,14 +79,6 @@ public class ListTests extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(tableTests);
-
-        jLabel1.setText("nom du test :");
-
-        test.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                testActionPerformed(evt);
-            }
-        });
 
         passer.setText("Passer");
         passer.addActionListener(new java.awt.event.ActionListener() {
@@ -112,16 +102,10 @@ public class ListTests extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 223, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(test, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(passer)
-                        .addGap(18, 18, 18)
-                        .addComponent(quitter)))
+                .addGap(138, 138, 138)
+                .addComponent(passer)
+                .addGap(18, 18, 18)
+                .addComponent(quitter)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -129,11 +113,7 @@ public class ListTests extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(test, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passer)
                     .addComponent(quitter))
@@ -143,20 +123,18 @@ public class ListTests extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_testActionPerformed
-
     private void passerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passerActionPerformed
        TestDAO tdao = new TestDAO();
-       idpt=tdao.findIdTestByNom(test.getText());
-      if(tdao.findTestById(idpt) ){
-          nomtest=tdao.findNomTestById(idpt);
+        int x = tableTests.getSelectedRow()+1;
+        if(tdao.findTestById(x) ){
+          nomtest=tdao.findNomTestById(x);
+          idpt=x;
        close();
        PasserTest pt =new PasserTest();
        pt.setVisible(true);
         // TODO add your handling code here:
       }
+  
     }//GEN-LAST:event_passerActionPerformed
 
     private void quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitterActionPerformed
@@ -204,11 +182,9 @@ public class ListTests extends javax.swing.JFrame {
     
    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton passer;
     private javax.swing.JButton quitter;
     private javax.swing.JTable tableTests;
-    private javax.swing.JTextField test;
     // End of variables declaration//GEN-END:variables
 }

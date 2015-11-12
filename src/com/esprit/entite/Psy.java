@@ -14,6 +14,7 @@ public class Psy {
     public int id_psy;
     public String nom_psy ;
     public String prenom_psy ;
+    public String login ;
     public int cin_psy ;
     public int age_psy;
     public String pwd_psy;
@@ -37,6 +38,11 @@ public class Psy {
     public String getPrenom_psy() {
         return prenom_psy;
     }
+
+    public String getLogin() {
+        return login;
+    }
+    
 
     public int getCin_psy() {
         return cin_psy;
@@ -78,6 +84,11 @@ public class Psy {
     public void setPrenom_psy(String prenom_psy) {
         this.prenom_psy = prenom_psy;
     }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+    
 
     public void setCin_psy(int cin_psy) {
         this.cin_psy = cin_psy;

@@ -5,7 +5,6 @@
  */
 package com.esprit.dao;
 
-import com.esprit.entite.Patient;
 import com.esprit.entite.Question;
 import com.esprit.util.ConnectionBd;
 import java.sql.Connection;
@@ -30,8 +29,8 @@ public class QuestionDAO {
         
     }
     public  void insertQuestion(Question q) throws SQLException{
-        requete="INSERT INTO question ( id_test,id_psy,categorie,question )"
-                + " VALUES ( "+q.getId_test()+","+q.getId_psy()+",' "+q.getCategorie()+" ',' "+q.getQuestion()+" ' )";
+        requete="INSERT INTO question ( id_test,id_psy,question )"
+                + " VALUES ( "+q.getId_test()+","+q.getId_psy()+" ,' "+q.getQuestion()+" ' )";
             Statement st =cnx.createStatement();
             st.executeUpdate(requete);
             System.out.println("Insertion effectué");
@@ -70,15 +69,8 @@ public class QuestionDAO {
             q.setId_question(rs.getInt(1));
             q.setId_test(rs.getInt(2));
             q.setId_psy(rs.getInt(3));
-            q.setCategorie(rs.getString(4));
-            q.setQuestion(rs.getString(5));
+            q.setQuestion(rs.getString(4));
            
-
-                 System.out.println(q.getId_question());
-                  System.out.println(q.getId_test());
-                   System.out.println(q.getId_psy());
-                   System.out.println(q.getCategorie());
-                 System.out.println(q.getQuestion());
              }
         } catch (SQLException ex) {
             System.out.println("erreur recherche"+ex);      
@@ -96,8 +88,7 @@ public class QuestionDAO {
             q.setId_question(rs.getInt(1));
             q.setId_test(rs.getInt(2));
             q.setId_psy(rs.getInt(3));
-            q.setCategorie(rs.getString(4));
-            q.setQuestion(rs.getString(5));
+            q.setQuestion(rs.getString(4));
            
 
 

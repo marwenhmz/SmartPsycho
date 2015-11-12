@@ -28,25 +28,26 @@ public class PatientDAO {
     }
     
     public  void insertPatient(Patient p) throws SQLException{
-        requete="INSERT INTO patient(nom_patient,prenom_patient,cin_patient,age_patient,pwd_patient,tel_patient,email_patient)"
-                + " VALUES ('"+p.getNom_patient()+"','"+p.getPrenom_patient()+"',"+p.getCin_patient()+","+p.getAge_patient()+",'"+p.getPwd_patient()+"',"+p.getTel_patient()+",'"+p.getEmail_patient()+"')";
+        requete="INSERT INTO patient(nom_patient,prenom_patient,login,cin_patient,age_patient,pwd_patient,tel_patient,email_patient)"
+                + " VALUES ('"+p.getNom_patient()+"','"+p.getPrenom_patient()+"','"+p.getLogin()+"',"+p.getCin_patient()+","+p.getAge_patient()+",'"+p.getPwd_patient()+"',"+p.getTel_patient()+",'"+p.getEmail_patient()+"')";
             Statement st =cnx.createStatement();
             st.executeUpdate(requete);
             System.out.println("Insertion effectué");
     
 }
      public void updatePatient(Patient p) {
-       requete = "UPDATE patient SET nom_patient=?, prenom_patient=?,cin_patient=?,age_patient=?,pwd_patient,tel_patient,email_patient"
+       requete = "UPDATE patient SET nom_patient=?, prenom_patient=?,login=?,cin_patient=?,age_patient=?,pwd_patient,tel_patient,email_patient"
                + "  WHERE id="+p.getId_patient()  ;
         try {
             PreparedStatement pst = cnx.prepareStatement(requete);
             pst.setString(1, p.getNom_patient());
             pst.setString(2, p.getPrenom_patient());
-            pst.setInt(3, p.getCin_patient());
-            pst.setInt(4, p.getAge_patient());
-             pst.setString(5, p.getPwd_patient());
-             pst.setInt(6, p.getTel_patient());
-              pst.setString(7, p.getEmail_patient());
+            pst.setString(3, p.getLogin());
+            pst.setInt(4, p.getCin_patient());
+            pst.setInt(5, p.getAge_patient());
+             pst.setString(6, p.getPwd_patient());
+             pst.setInt(7, p.getTel_patient());
+              pst.setString(8, p.getEmail_patient());
             pst.executeUpdate();
             System.out.println("Modification réussite");
         } catch (SQLException ex) {
@@ -179,5 +180,21 @@ public class PatientDAO {
         }
         return p;
     }
+        public boolean findLogin(String  login) {
+            boolean find=false ;
+        requete="SELECT * FROM patient WHERE login '"+login+"'";
+        
+        try {
+          Statement  st = cnx.createStatement();
+            ResultSet rs=st.executeQuery(requete);
+            
+             while(rs.next()){
+                find=true;
+             }
+        } catch (SQLException ex) {
+            System.out.println("erreur recherche"+ex);      
+        }
+        return find;
       
+}
 }

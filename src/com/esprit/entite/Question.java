@@ -14,7 +14,7 @@ public class Question {
     public int id_test ;
     public int id_psy ;
     public String question ;
-    public String categorie ;
+   
 
     public Question() {
     }
@@ -25,7 +25,7 @@ public class Question {
         this.id_test = id_test;
         this.id_psy = id_psy;
         this.question = question;
-        this.categorie = categorie;
+        
     }
 
     public int getId_question() {
@@ -44,9 +44,7 @@ public class Question {
         return question;
     }
 
-    public String getCategorie() {
-        return categorie;
-    }
+    
 
     public void setId_question(int id_question) {
         this.id_question = id_question;
@@ -64,9 +62,7 @@ public class Question {
         this.question = question;
     }
 
-    public void setCategorie(String categorie) {
-        this.categorie = categorie;
-    }
+    
 
     @Override
     public String toString() {

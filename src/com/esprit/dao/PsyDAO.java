@@ -29,15 +29,15 @@ public class PsyDAO {
     
     
      public  void insertPsy(Psy p) throws SQLException{
-        requete="INSERT INTO psychologue (nom_psy,prenom_psy,cin_psy,age_psy,pwd_psy,ville,tel_psy,email_psy,diplome)"
-                + " VALUES ('"+p.getNom_psy()+"','"+p.getPrenom_psy()+"',"+p.getCin_psy()+","+p.getAge_psy()+",'"+p.getPwd_psy()+"','"+p.getVille() +"',"+p.getTel_psy()+",'"+p.getEmail_psy()+"','"+p.getDiplome()+"')";
+        requete="INSERT INTO psychologue (nom_psy,prenom_psy,login,cin_psy,age_psy,pwd_psy,ville,tel_psy,email_psy,diplome)"
+                + " VALUES ('"+p.getNom_psy()+"','"+p.getPrenom_psy()+"','"+p.getLogin()+"',"+p.getCin_psy()+","+p.getAge_psy()+",'"+p.getPwd_psy()+"','"+p.getVille() +"',"+p.getTel_psy()+",'"+p.getEmail_psy()+"','"+p.getDiplome()+"')";
             Statement st =cnx.createStatement();
             st.executeUpdate(requete);
             System.out.println("Insertion effectué");
     
 }
      public int findPsyByLoginAndPwd(String login,String pwd) {
-        String requete="SELECT * FROM psychologue WHERE  login_psy= '"+login +"' AND pwd_psy= '"+pwd+"'";
+        String requete="SELECT * FROM psychologue WHERE  login= '"+login +"' AND pwd_psy= '"+pwd+"'";
          int p=0;
         try {
           Statement  st = cnx.createStatement();
@@ -83,6 +83,21 @@ public class PsyDAO {
         }
         return find;
     }
-    
+     public boolean findLogin(String  login) {
+            boolean find=false ;
+        requete="SELECT * FROM psychologue WHERE login '"+login+"'";
+        
+        try {
+          Statement  st = cnx.createStatement();
+            ResultSet rs=st.executeQuery(requete);
+            
+             while(rs.next()){
+                find=true;
+             }
+        } catch (SQLException ex) {
+            System.out.println("erreur recherche"+ex);      
+        }
+        return find;
+    }
     
 }

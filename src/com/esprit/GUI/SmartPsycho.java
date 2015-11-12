@@ -5,19 +5,10 @@
  */
 package com.esprit.GUI;
 
-import com.esprit.dao.PatientDAO;
-import com.esprit.dao.QuestionDAO;
-import com.esprit.dao.ResultatDAO;
-import com.esprit.dao.TestDAO;
+import com.esprit.dao.ContactDAO;
 import com.esprit.entite.Patient;
-import com.esprit.entite.Question;
-import com.esprit.entite.Resultat;
-import com.esprit.entite.Test;
+import com.sun.xml.registry.uddi.bindings_v2_2.Contact;
 import java.sql.SQLException;
-import java.util.Iterator;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -29,7 +20,7 @@ public class SmartPsycho {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SQLException {
-//       Patient p=new Patient();
+       Patient p=new Patient();
 //        p.setNom_patient("siwar");
 //        p.setPrenom_patient("brjeb");
 //        p.setCin_patient(25245545);
@@ -80,20 +71,21 @@ public class SmartPsycho {
 //        ts =  t.afficheTests();
 //        System.out.println(ts);
  
-     Question q=new Question();
-        q.id_question=0;
-        q.id_test=1 ;
-        q.id_psy=1;
-        q.categorie="society";
-        q.question="what??";
-        QuestionDAO qdao = new QuestionDAO();
-        try {
-            qdao.insertQuestion(q);
-        } catch (SQLException ex) {
-            Logger.getLogger(EcrirTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//     Question q=new Question();
+//        q.id_question=0;
+//        q.id_test=1 ;
+//        q.id_psy=1;
+//        q.question="what??";
+//        QuestionDAO qdao = new QuestionDAO();
+//        try {
+//            qdao.insertQuestion(q);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(EcrirTest.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
+        ContactDAO c =new ContactDAO();
+        
+        System.out.println(c.afficheContactsByIdPatientAndIdPsy(1, 1));
+    
     }
-    
-    
-    
 }

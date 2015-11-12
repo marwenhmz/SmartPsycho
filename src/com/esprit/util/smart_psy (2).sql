@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Sam 07 Novembre 2015 à 21:53
+-- Généré le :  Jeu 12 Novembre 2015 à 23:30
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -43,6 +43,29 @@ INSERT INTO `admin` (`id_admin`, `login_admin`, `pwd_admin`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `contact`
+--
+
+CREATE TABLE IF NOT EXISTS `contact` (
+  `id_patient` int(11) NOT NULL,
+  `id_psy` int(11) NOT NULL,
+  `id_test` int(11) NOT NULL,
+  `passer_test` int(1) NOT NULL,
+  KEY `id_patient` (`id_patient`),
+  KEY `id_psy` (`id_psy`),
+  KEY `id_test` (`id_test`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `contact`
+--
+
+INSERT INTO `contact` (`id_patient`, `id_psy`, `id_test`, `passer_test`) VALUES
+(1, 1, 1, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `diagnostique`
 --
 
@@ -52,6 +75,7 @@ CREATE TABLE IF NOT EXISTS `diagnostique` (
   `id_patient` int(11) NOT NULL,
   `id_test` int(11) NOT NULL,
   `diag` text NOT NULL,
+  `etat_diag` int(1) NOT NULL,
   PRIMARY KEY (`id_diag`),
   KEY `id_patient` (`id_patient`),
   KEY `id_psy` (`id_psy`),
@@ -68,6 +92,7 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `id_patient` int(5) NOT NULL AUTO_INCREMENT,
   `nom_patient` varchar(20) NOT NULL,
   `prenom_patient` varchar(20) NOT NULL,
+  `login` varchar(20) NOT NULL,
   `cin_patient` int(8) NOT NULL,
   `age_patient` int(11) NOT NULL,
   `pwd_patient` varchar(30) NOT NULL,
@@ -75,19 +100,16 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `email_patient` varchar(30) NOT NULL,
   PRIMARY KEY (`id_patient`),
   UNIQUE KEY `id_patient` (`id_patient`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Contenu de la table `patient`
 --
 
-INSERT INTO `patient` (`id_patient`, `nom_patient`, `prenom_patient`, `cin_patient`, `age_patient`, `pwd_patient`, `tel_patient`, `email_patient`) VALUES
-(1, 'marwen', 'hamza', 9391891, 25, 'marwen', 0, ''),
-(4, 'siwar', 'brjeb', 25245545, 23, 'siwar', 0, ''),
-(5, 'mm', 'hh', 99, 25, 'marwen', 55, 'gg'),
-(6, 'mmm', 'hhh', 99, 25, 'mmm', 555, 'ggg'),
-(7, 'mmmm', 'hhhh', 0, 25, 'marwen', 5555, 'gggg'),
-(8, 'mmrt', 'erz', 999999, 25, 'marwen', 55, 'ggrsthdfger');
+INSERT INTO `patient` (`id_patient`, `nom_patient`, `prenom_patient`, `login`, `cin_patient`, `age_patient`, `pwd_patient`, `tel_patient`, `email_patient`) VALUES
+(1, 'hamza', 'marwen', 'marwen', 9391891, 25, 'marwen', 5555, 'gggg'),
+(10, 'hamza', 'marwen', 'hamza', 99, 25, 'marwen', 55, 'gg'),
+(11, 'hamza', 'marwen', 'marwen', 999, 25, 'marwen', 55, 'ggg');
 
 -- --------------------------------------------------------
 
@@ -97,8 +119,9 @@ INSERT INTO `patient` (`id_patient`, `nom_patient`, `prenom_patient`, `cin_patie
 
 CREATE TABLE IF NOT EXISTS `psychologue` (
   `id_psy` int(5) NOT NULL AUTO_INCREMENT,
-  `prenom_psy` varchar(20) NOT NULL,
   `nom_psy` varchar(20) NOT NULL,
+  `prenom_psy` varchar(20) NOT NULL,
+  `login` varchar(20) NOT NULL,
   `cin_psy` int(11) NOT NULL,
   `age_psy` int(11) NOT NULL,
   `pwd_psy` varchar(20) NOT NULL,
@@ -107,16 +130,14 @@ CREATE TABLE IF NOT EXISTS `psychologue` (
   `email_psy` varchar(30) NOT NULL,
   `diplome` varchar(20) NOT NULL,
   PRIMARY KEY (`id_psy`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `psychologue`
 --
 
-INSERT INTO `psychologue` (`id_psy`, `prenom_psy`, `nom_psy`, `cin_psy`, `age_psy`, `pwd_psy`, `ville`, `tel_psy`, `email_psy`, `diplome`) VALUES
-(1, '', 'hamza', 0, 0, 'hamza', '0', 0, '', ''),
-(2, '', 'berjab', 0, 0, 'berjab', '0', 0, '', ''),
-(3, 'hamza', 'hamza', 99, 25, 'marwen', 'mahdia', 55, 'gg', 'sqgdx');
+INSERT INTO `psychologue` (`id_psy`, `nom_psy`, `prenom_psy`, `login`, `cin_psy`, `age_psy`, `pwd_psy`, `ville`, `tel_psy`, `email_psy`, `diplome`) VALUES
+(1, 'hamza', 'marwen', 'hamza', 9391890, 25, 'marwen', 'mahdia', 555, 'gggg', 'fsxcvxvc');
 
 -- --------------------------------------------------------
 
@@ -128,20 +149,20 @@ CREATE TABLE IF NOT EXISTS `question` (
   `id_question` int(5) NOT NULL AUTO_INCREMENT,
   `id_test` int(11) NOT NULL,
   `id_psy` int(11) NOT NULL,
-  `categorie` varchar(20) NOT NULL,
   `question` text NOT NULL,
   PRIMARY KEY (`id_question`),
   KEY `id_test` (`id_test`),
   KEY `id_psy` (`id_psy`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `question`
 --
 
-INSERT INTO `question` (`id_question`, `id_test`, `id_psy`, `categorie`, `question`) VALUES
-(1, 1, 1, 'society', 'why'),
-(2, 1, 1, 'kannibalisme', 'viande arabe ou allmend ');
+INSERT INTO `question` (`id_question`, `id_test`, `id_psy`, `question`) VALUES
+(1, 1, 1, ' test?????? '),
+(2, 1, 1, ' tester??? '),
+(3, 2, 1, ' ecrir une question ');
 
 -- --------------------------------------------------------
 
@@ -160,14 +181,15 @@ CREATE TABLE IF NOT EXISTS `resultat` (
   KEY `id_question_2` (`id_question`),
   KEY `id_patient` (`id_patient`),
   KEY `id_test` (`id_test`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
 
 --
 -- Contenu de la table `resultat`
 --
 
 INSERT INTO `resultat` (`id_resultat`, `id_question`, `id_patient`, `id_test`, `result`) VALUES
-(1, 1, 1, 1, 'yes');
+(27, 1, 11, 1, 'siwar'),
+(29, 2, 11, 1, 'brjab');
 
 -- --------------------------------------------------------
 
@@ -181,19 +203,27 @@ CREATE TABLE IF NOT EXISTS `test` (
   `nom_test` varchar(20) NOT NULL,
   PRIMARY KEY (`id_test`),
   KEY `id_psy` (`id_psy`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Contenu de la table `test`
 --
 
 INSERT INTO `test` (`id_test`, `id_psy`, `nom_test`) VALUES
-(1, 1, 'tester'),
-(2, 2, 'kaneki');
+(1, 1, 'teste1'),
+(2, 1, 'teste2');
 
 --
 -- Contraintes pour les tables exportées
 --
+
+--
+-- Contraintes pour la table `contact`
+--
+ALTER TABLE `contact`
+  ADD CONSTRAINT `contact_ibfk_3` FOREIGN KEY (`id_test`) REFERENCES `test` (`id_test`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `contact_ibfk_1` FOREIGN KEY (`id_patient`) REFERENCES `patient` (`id_patient`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `contact_ibfk_2` FOREIGN KEY (`id_psy`) REFERENCES `psychologue` (`id_psy`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `diagnostique`

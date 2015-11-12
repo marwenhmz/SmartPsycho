@@ -14,6 +14,7 @@ public class Patient {
     public int id_patient ;
     public String nom_patient ;
     public String prenom_patient ;
+    public String login ;
     public int age_patient ;
     public int cin_patient ;
     public String pwd_patient;
@@ -34,6 +35,11 @@ public class Patient {
     public String getPrenom_patient() {
         return prenom_patient;
     }
+
+    public String getLogin() {
+        return login;
+    }
+    
 
     public int getAge_patient() {
         return age_patient;
@@ -66,6 +72,11 @@ public class Patient {
     public void setPrenom_patient(String prenom_patient) {
         this.prenom_patient = prenom_patient;
     }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+    
 
     public void setAge_patient(int age_patient) {
         this.age_patient = age_patient;

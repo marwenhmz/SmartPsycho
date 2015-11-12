@@ -30,28 +30,33 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="57" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="inscrir" max="32767" attributes="0"/>
-                  <Component id="accueil" max="32767" attributes="0"/>
-                  <Component id="exit" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="inscrir" max="32767" attributes="0"/>
+                          <Component id="accueil" max="32767" attributes="0"/>
+                          <Component id="exit" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel11" pref="249" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="32767" attributes="0"/>
               <Component id="inscrir" min="-2" pref="33" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="accueil" min="-2" pref="30" max="-2" attributes="0"/>
@@ -59,6 +64,7 @@
               <Component id="exit" min="-2" pref="32" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
           </Group>
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -68,38 +74,36 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel1" min="-2" pref="70" max="-2" attributes="0"/>
-                      <Component id="jLabel7" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel5" max="32767" attributes="0"/>
-                                  <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel10" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="jLabel8" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
-                              <Component id="jLabel9" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="email" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tel" alignment="0" max="32767" attributes="0"/>
-                              <Component id="ville" alignment="0" max="32767" attributes="0"/>
-                              <Component id="confpwd" alignment="0" pref="200" max="32767" attributes="0"/>
-                              <Component id="pwd" alignment="0" max="32767" attributes="0"/>
-                              <Component id="age" alignment="0" max="32767" attributes="0"/>
-                              <Component id="cin" alignment="0" max="32767" attributes="0"/>
-                              <Component id="prenom" alignment="0" max="32767" attributes="0"/>
-                              <Component id="nom" alignment="0" max="32767" attributes="0"/>
-                              <Component id="diplome" max="32767" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="nom" max="32767" attributes="0"/>
+                          <Component id="prenom" alignment="0" max="32767" attributes="0"/>
+                          <Component id="cin" alignment="0" max="32767" attributes="0"/>
+                          <Component id="age" alignment="0" max="32767" attributes="0"/>
+                          <Component id="pwd" alignment="0" max="32767" attributes="0"/>
+                          <Component id="confpwd" max="32767" attributes="0"/>
+                          <Component id="login" max="32767" attributes="0"/>
                       </Group>
+                      <Component id="ville" min="-2" pref="104" max="-2" attributes="0"/>
+                      <Component id="diplome" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
+                      <Component id="email" min="-2" pref="120" max="-2" attributes="0"/>
+                      <Component id="tel" min="-2" pref="112" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jLogin" max="32767" attributes="0"/>
+                      <Component id="jEmail" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jTel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jVille" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jConfPwd" alignment="0" pref="200" max="32767" attributes="0"/>
+                      <Component id="jPwd" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jAge" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jCin" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jPrenom" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jNom" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jDiplome" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="127" max="32767" attributes="0"/>
               </Group>
@@ -109,138 +113,141 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel5" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="nom" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jNom" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jPrenom" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="prenom" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="jLabel6" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="cin" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="jLabel2" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="age" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="jLabel3" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="pwd" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="jLabel4" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="confpwd" min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="jLabel10" min="-2" pref="24" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLogin" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="login" pref="23" max="32767" attributes="0"/>
+                          <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="ville" min="-2" pref="30" max="-2" attributes="0"/>
-                      </Group>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jCin" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="cin" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jAge" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="age" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jPwd" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="pwd" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jConfPwd" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="confpwd" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jVille" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="ville" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="tel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="jLabel7" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jEmail" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="email" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="jLabel8" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jDiplome" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="diplome" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="jLabel9" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="14" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel5">
+        <Component class="javax.swing.JLabel" name="nom">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Nom       :"/>
+            <Property name="text" type="java.lang.String" value=" Nom          :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="ville">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Ville       :"/>
+            <Property name="text" type="java.lang.String" value="Ville             :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="cin">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Cin          :"/>
+            <Property name="text" type="java.lang.String" value="Cin             :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="age">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Age         :"/>
+            <Property name="text" type="java.lang.String" value="Age             :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="nom">
+        <Component class="javax.swing.JTextField" name="jNom">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nomActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jNomActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="prenom">
+        <Component class="javax.swing.JTextField" name="jPrenom">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="prenomActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jPrenomActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="cin">
+        <Component class="javax.swing.JTextField" name="jCin">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cinActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCinActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="age">
+        <Component class="javax.swing.JTextField" name="jAge">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ageActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jAgeActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="prenom">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="ff" type="rgb"/>
@@ -248,76 +255,76 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Prenom   :"/>
+            <Property name="text" type="java.lang.String" value="Prenom      :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="email">
+        <Component class="javax.swing.JTextField" name="jEmail">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jEmailActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
+        <Component class="javax.swing.JLabel" name="tel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Tel         :"/>
+            <Property name="text" type="java.lang.String" value="Tel               :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tel">
+        <Component class="javax.swing.JTextField" name="jTel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="telActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTelActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel8">
+        <Component class="javax.swing.JLabel" name="email">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Email     :"/>
+            <Property name="text" type="java.lang.String" value="Email           :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="diplome">
+        <Component class="javax.swing.JTextField" name="jDiplome">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="diplomeActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jDiplomeActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel9">
+        <Component class="javax.swing.JLabel" name="diplome">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Diplome   :"/>
+            <Property name="text" type="java.lang.String" value="Diplome       :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="pwd">
+        <Component class="javax.swing.JPasswordField" name="jPwd">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="pwd">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Password :"/>
+            <Property name="text" type="java.lang.String" value="Password     :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="confpwd">
+        <Component class="javax.swing.JPasswordField" name="jConfPwd">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel10">
+        <Component class="javax.swing.JLabel" name="confpwd">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="14" style="1"/>
@@ -325,15 +332,25 @@
             <Property name="text" type="java.lang.String" value="Confirm pwd :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="ville">
+        <Component class="javax.swing.JTextField" name="jVille">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="villeActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jVilleActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jLogin">
+        </Component>
+        <Component class="javax.swing.JLabel" name="login">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Login          :"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -369,6 +386,14 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel11">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Inscription Psychologue"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

@@ -9,8 +9,6 @@ import com.esprit.DAO.PsyDAO;
 import static com.esprit.GUI.Authentification.idpatient;
 import com.esprit.dao.AdminDAO;
 import com.esprit.dao.PatientDAO;
-import com.esprit.entite.Patient;
-import com.esprit.entite.Psy;
 import com.esprit.util.ConnectionBd;
 import java.awt.Toolkit;
 import java.awt.event.*;

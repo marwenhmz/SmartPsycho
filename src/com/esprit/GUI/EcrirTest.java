@@ -49,9 +49,7 @@ public class EcrirTest extends javax.swing.JFrame  {
         num_question = new javax.swing.JLabel();
         ajoutEspaceQuestion = new javax.swing.JButton();
         enregistrer = new javax.swing.JButton();
-        categorie = new javax.swing.JTextField();
         nom_test = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         quitter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -88,15 +86,8 @@ public class EcrirTest extends javax.swing.JFrame  {
         });
         jPanel1.add(enregistrer);
         enregistrer.setBounds(370, 200, 170, 23);
-        jPanel1.add(categorie);
-        categorie.setBounds(599, 90, 120, 80);
         jPanel1.add(nom_test);
         nom_test.setBounds(290, 0, 170, 50);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Categuorie  :");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(600, 60, 90, 20);
 
         quitter.setText("Quitter");
         quitter.addActionListener(new java.awt.event.ActionListener() {
@@ -111,13 +102,13 @@ public class EcrirTest extends javax.swing.JFrame  {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 758, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -128,7 +119,6 @@ public class EcrirTest extends javax.swing.JFrame  {
         q.id_question=0;
         q.id_test=NomTest.idt ;
         q.id_psy=Authentification.idp;
-        q.categorie=categorie.getText();
         q.question=espace_question.getText();
         QuestionDAO qdao = new QuestionDAO();
         try {
@@ -146,7 +136,6 @@ public class EcrirTest extends javax.swing.JFrame  {
         q.id_question=0;
         q.id_test=NomTest.idt ;
         q.id_psy=Authentification.idp;
-        q.categorie=categorie.getText();
         q.question=espace_question.getText();
         QuestionDAO qdao = new QuestionDAO();
         try {
@@ -175,10 +164,8 @@ public void close(){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ajoutEspaceQuestion;
-    private javax.swing.JTextField categorie;
     private javax.swing.JButton enregistrer;
     private javax.swing.JTextField espace_question;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel nom_test;
     private javax.swing.JLabel num_question;

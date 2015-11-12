@@ -13,10 +13,8 @@ import com.esprit.entite.Resultat;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,20 +29,24 @@ public class PasserTest extends javax.swing.JFrame {
      */
     public int idq;
     public Iterator<Question> courrentQuestion ;
+    int index;
+     List <Question> l ;
+    
     
     public PasserTest() {
      
         initComponents();
+        index=0;
         TestDAO tdao=new TestDAO();
         String nt ;
               nt=  tdao.findNomTestById(ListTests.idpt);
          nomtest.setText(nt);
            
         QuestionDAO qdao=new QuestionDAO();
-        List <Question> l =new ArrayList<>();
+        //l =new ArrayList<>();
         l=qdao.afficheQuestionsByIdTest(ListTests.idpt);
-        courrentQuestion = l.iterator();
-        Question cc=courrentQuestion.next();
+        //courrentQuestion = l.iterator();
+        Question cc=l.get(index);
          idq=cc.getId_question();
          question.setText((String)cc.toString());
         
@@ -53,15 +55,16 @@ public class PasserTest extends javax.swing.JFrame {
 
         
     }
-    public PasserTest(Iterator q){
+    public PasserTest(List<Question> l, int index){
                
                 initComponents();
         TestDAO tdao=new TestDAO();
         String nt ;
               nt=  tdao.findNomTestById(ListTests.idpt);
          nomtest.setText(nt);
-        courrentQuestion=q;
-        Question  c= (Question) courrentQuestion.next();
+        this.index=index;
+        this.l=l;
+        Question  c=l.get(index);
         idq=c.getId_question();
         question.setText(c.toString());
         
@@ -78,7 +81,8 @@ public class PasserTest extends javax.swing.JFrame {
         reponse = new javax.swing.JTextField();
         suivant = new javax.swing.JButton();
         Exit = new javax.swing.JButton();
-        nomtest = new javax.swing.JTextField();
+        precedent = new javax.swing.JButton();
+        nomtest = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
 
@@ -98,45 +102,55 @@ public class PasserTest extends javax.swing.JFrame {
             }
         });
 
-        nomtest.setText("Nom Du Test");
+        precedent.setText("Précedent");
+        precedent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                precedentActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 536, Short.MAX_VALUE)
-                        .addComponent(suivant)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(291, 291, 291)
+                        .addComponent(nomtest, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(reponse, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(274, 274, 274)
-                        .addComponent(nomtest, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(question, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(reponse, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(precedent)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(suivant, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(question, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 29, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(nomtest, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nomtest, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Exit))
+                .addGap(18, 18, 18)
                 .addComponent(question, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(reponse, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(suivant)
-                    .addComponent(Exit))
+                    .addComponent(precedent))
                 .addGap(62, 62, 62))
         );
 
@@ -146,29 +160,36 @@ public class PasserTest extends javax.swing.JFrame {
     private void suivantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suivantActionPerformed
       
         Resultat r=new Resultat();
-        
-         r.setId_resultat(0);
+        ResultatDAO rdao =new ResultatDAO();
          r.setId_question(idq);
          r.setId_patient(Authentification.idpatient);
          r.setId_test(ListTests.idpt);
          r.setResult(reponse.getText());
-         ResultatDAO rdao =new ResultatDAO();
-        try {
-            rdao.insertResultat(r);
-        } catch (SQLException ex) {
-            Logger.getLogger(PasserTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        if(courrentQuestion.hasNext()){
+        if( rdao.findResultatByIds(Authentification.idpatient, ListTests.idpt,idq)){
+            rdao.updateResultat(r);
            
-        PasserTest pt = new PasserTest(courrentQuestion);
+       
+        }else  {
+             try {
+                rdao.insertResultat(r);
+            } catch (SQLException ex) {
+                Logger.getLogger(PasserTest.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        
+        if(index+1 < l.size()){
+           
+        PasserTest pt = new PasserTest(l, index+1);
        pt.setVisible(true);
         close();
 
-   } else {
+        } else {
             Thnx t=new Thnx();
             t.setVisible(true);
             close();
         }
+        
 
    
     }//GEN-LAST:event_suivantActionPerformed
@@ -179,48 +200,27 @@ public class PasserTest extends javax.swing.JFrame {
  
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
        
-        close();// TODO add your handling code here:
+        close();
     }//GEN-LAST:event_ExitActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(PasserTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(PasserTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(PasserTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(PasserTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new PasserTest().setVisible(true);
-//            }
-//        });
-//    }
+    private void precedentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precedentActionPerformed
+     
+        if(index > 0){
+           
+        PasserTest pt = new PasserTest(l,index-1);
+       pt.setVisible(true);
+        close();
+
+   }
+    }//GEN-LAST:event_precedentActionPerformed
+
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Exit;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField nomtest;
+    private javax.swing.JLabel nomtest;
+    private javax.swing.JButton precedent;
     private javax.swing.JTextField question;
     private javax.swing.JTextField reponse;
     private javax.swing.JButton suivant;
