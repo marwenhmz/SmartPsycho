@@ -5,6 +5,7 @@
  */
 package com.esprit.gui;
 
+import com.esprit.entities.Album;
 import com.esprit.util.ConnectionBd;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -12,6 +13,7 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -26,12 +28,29 @@ public class InterfaceImage extends javax.swing.JFrame {
     Connection connection=null;
     ResultSet rs=null;
     PreparedStatement pst=null;
+    
+    
     /**
      * Creates new form InterfaceImage
      */
     public InterfaceImage() {
         initComponents();
         connection =ConnectionBd.getInstance();
+        String sql="Select * from  album";
+        try {
+         pst=connection.prepareStatement(sql);
+         ResultSet rs=pst.executeQuery();
+         while ( rs.next()) {
+             
+             String titre_album=rs.getString("titre_album");
+            String description_album=rs.getString("description_album");
+            int id_album=rs.getInt("id_album");
+            ListeAl.addItem(new com.esprit.entities.Album(id_album, titre_album, description_album));
+             
+         }
+        
+         } catch(SQLException e) {
+        }
     }
 
     /**
@@ -45,56 +64,70 @@ public class InterfaceImage extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        espaceIm = new javax.swing.JLabel();
+        attachIm = new javax.swing.JButton();
+        chowIm = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         textArea1 = new java.awt.TextArea();
-        jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        ListeAl = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(null);
 
+        espaceIm.setText("jLabel2");
+
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 130, Short.MAX_VALUE)
+            .addGap(0, 390, Short.MAX_VALUE)
+            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(espaceIm, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 160, Short.MAX_VALUE)
+            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(espaceIm, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
+        jDesktopPane1.setLayer(espaceIm, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jPanel1.add(jDesktopPane1);
-        jDesktopPane1.setBounds(830, 90, 130, 100);
+        jDesktopPane1.setBounds(680, 50, 390, 160);
 
-        jButton1.setText("attach image");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        attachIm.setText("attach image");
+        attachIm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                attachImActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(740, 220, 120, 30);
+        jPanel1.add(attachIm);
+        attachIm.setBounds(740, 220, 120, 30);
 
-        jButton2.setText("show image");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        chowIm.setText("show image");
+        chowIm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                chowImActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(910, 220, 120, 30);
+        jPanel1.add(chowIm);
+        chowIm.setBounds(910, 220, 120, 30);
 
         jButton3.setText("ADD");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -103,23 +136,11 @@ public class InterfaceImage extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(820, 300, 53, 23);
+        jButton3.setBounds(940, 283, 80, 30);
         jPanel1.add(textArea1);
         textArea1.setBounds(580, 210, 100, 80);
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(570, 80, 100, 30);
         jPanel1.add(jTextField2);
         jTextField2.setBounds(570, 140, 100, 30);
-
-        jLabel3.setText("id_image");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(450, 80, 100, 30);
 
         jLabel4.setText("titre_image");
         jPanel1.add(jLabel4);
@@ -129,9 +150,36 @@ public class InterfaceImage extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(470, 220, 70, 30);
 
+        jButton8.setText("Update");
+        jButton8.setActionCommand("");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton8);
+        jButton8.setBounds(860, 340, 100, 30);
+
+        jButton7.setText("Delete");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton7);
+        jButton7.setBounds(780, 280, 90, 30);
+
+        ListeAl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListeAlActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ListeAl);
+        ListeAl.setBounds(590, 400, 80, 20);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/esprit/gui/psy.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(-10, -10, 1080, 620);
+        jLabel1.setBounds(40, 0, 1080, 620);
 
         jButton4.setText("jButton4");
         jPanel1.add(jButton4);
@@ -144,10 +192,6 @@ public class InterfaceImage extends javax.swing.JFrame {
         jButton6.setText("jButton6");
         jPanel1.add(jButton6);
         jButton6.setBounds(400, 290, 73, 23);
-
-        jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(760, 80, 130, 100);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -167,13 +211,13 @@ public class InterfaceImage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void attachImActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attachImActionPerformed
   JFileChooser chooser=new JFileChooser();
         chooser.showOpenDialog(null);
         File f=chooser.getSelectedFile();
         filename=f.getAbsolutePath();
         //jLabel2.setIcon(new ImageIcon(filename));
-        jButton1.setText(filename);
+        attachIm.setText(filename);
         try{
             File image=new File(filename);
             FileInputStream fis=new FileInputStream(image);
@@ -190,24 +234,24 @@ public class InterfaceImage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }        // TODO add your handling code here:
        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_attachImActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void chowImActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chowImActionPerformed
    try{
-            String sql ="select image from image where id_image= "+jTextField1.getText();
+            String sql ="select image from image where titre_image=  '"+jTextField2.getText()+"'";
             pst=connection.prepareStatement(sql);
             rs=pst.executeQuery();
             if (rs.next()){
-            byte[]imagedata =rs.getBytes("Image");
+            byte[]imagedata =rs.getBytes(1);
             format = new ImageIcon(imagedata);
-            jLabel2.setIcon(format);
+            espaceIm.setIcon(format);
             }
         }
         catch(Exception e){
             e.printStackTrace();
                     }
                                                     // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_chowImActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
@@ -216,12 +260,13 @@ public class InterfaceImage extends javax.swing.JFrame {
         
         try{
             
-            String sql="Insert into image (id_image,image,titre_image,description)values(?,?,?,?)";
+            String sql="Insert into image (image,titre_image,description,id_album)values(?,?,?,?)";
             pst=connection.prepareStatement(sql);
-            pst.setString(1,jTextField1.getText());
-            pst.setBytes(2,person_image);
-            pst.setString(3,jTextField2.getText());
-            pst.setString(4,textArea1.getText());  
+           // pst.setString(1,jTextField1.getText());
+            pst.setBytes(1,person_image);
+            pst.setString(2,jTextField2.getText());
+            pst.setString(3,textArea1.getText()); 
+             pst.setInt(4,  ((Album)ListeAl.getSelectedItem()).getId_album());
             pst.execute();
             JOptionPane.showMessageDialog(null, "ADDED");
             
@@ -234,9 +279,49 @@ public class InterfaceImage extends javax.swing.JFrame {
                 // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+ int p = JOptionPane.showConfirmDialog(null,"voulez vous vraiment effacer","Delete",JOptionPane.YES_NO_OPTION);
+        if (p==0){
+        
+        String sql =" delete from image where titre_image=?";
+        
+        try{
+            pst=connection.prepareStatement(sql);
+            pst.setString(1,jTextField2.getText());
+            
+            
+            
+            pst.execute();
+            JOptionPane.showMessageDialog(null,"Deleted");
+        
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+try{
+            //String value1 =jTextField1.getText();
+            String value2 =jTextField2.getText();
+            String value3 =textArea1.getText();
+          
+            String sql="update image set titre_image='"+value2+"',description='"+value3+"',' where titre_image='"+value2+"'";
+            pst=connection.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Updated");
+
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void ListeAlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListeAlActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_ListeAlActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,24 +359,25 @@ public class InterfaceImage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox ListeAl;
+    private javax.swing.JButton attachIm;
+    private javax.swing.JButton chowIm;
+    private javax.swing.JLabel espaceIm;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private java.awt.TextArea textArea1;
     // End of variables declaration//GEN-END:variables
-private ImageIcon format=null;
+private ImageIcon format;
 String filename=null ;
 int s=0;
 byte[] person_image=null;}
