@@ -15,7 +15,7 @@ public class VideoPlayer {
     
     public static void main(final String args[]) {
         new NativeDiscovery().discover();
-        NativeLibrary.addSearchPath("libvlc", "C:\\Program Files\\VideoLAN\\VLC");
+        NativeLibrary.addSearchPath("libvlc", "C:\\Program Files\\VideoLAN\\VLC"); //chercher fil path lib
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {

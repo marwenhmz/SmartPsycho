@@ -12,15 +12,15 @@ import javax.xml.soap.Text;
  *
  * @author Siwar
  */
-public class Statut {
+public class Cahierr {
     private int id_statut;
     private String statut;
     private String titre_statut;
 
-    public Statut() {
+    public Cahierr() {
     }
 
-    public Statut(int id_statut, String statut, String titre_statut) {
+    public Cahierr(int id_statut, String statut, String titre_statut) {
         this.id_statut = id_statut;
         this.statut = statut;
         this.titre_statut = titre_statut;

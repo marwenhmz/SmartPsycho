@@ -16,6 +16,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
@@ -69,9 +71,9 @@ public class InterfaceVideo extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        exit = new javax.swing.JButton();
         textArea1 = new java.awt.TextArea();
         ListeAl = new javax.swing.JComboBox();
+        jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -114,15 +116,6 @@ public class InterfaceVideo extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3);
         jButton3.setBounds(290, 250, 53, 30);
-
-        exit.setText("Exit");
-        exit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitActionPerformed(evt);
-            }
-        });
-        jPanel1.add(exit);
-        exit.setBounds(360, 250, 51, 30);
         jPanel1.add(textArea1);
         textArea1.setBounds(110, 140, 100, 80);
 
@@ -133,6 +126,15 @@ public class InterfaceVideo extends javax.swing.JFrame {
         });
         jPanel1.add(ListeAl);
         ListeAl.setBounds(60, 280, 70, 20);
+
+        jButton4.setText("supprimer");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4);
+        jButton4.setBounds(380, 260, 100, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/esprit/gui/p.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -164,15 +166,15 @@ public class InterfaceVideo extends javax.swing.JFrame {
         //jLabel2.setIcon(new ImageIcon(filename));
         jButton1.setText(filename);
         try{
-            filenameDst = "video/" + f.getName();
+            filenameDst = "video/" + f.getName(); //esm video
             File vidsrc =new File(filename);
             File viddst =new File(filenameDst);
-            FileInputStream fis=new FileInputStream(vidsrc);
-            FileOutputStream fos = new FileOutputStream(viddst);
+            FileInputStream fis=new FileInputStream(vidsrc); //copie pour lire
+            FileOutputStream fos = new FileOutputStream(viddst); //ecrire
 //            ByteArrayOutputStream bos=new ByteArrayOutputStream();
             byte[] buf=new byte[1024];
             for (int readNum;(readNum=fis.read(buf))!=-1;){
-            fos.write(buf,0,readNum);
+            fos.write(buf,0,readNum); 
             }
             
 //            person_image=bos.toByteArray();
@@ -217,13 +219,12 @@ int p = JOptionPane.showConfirmDialog(null,"voulez vous vraiment ajouter","Ajout
         try {
 
  String sql ="select video from video where titre_video= '"+jTextField2.getText()+"'";
-            pst=connection.prepareStatement(sql);
-            rs=pst.executeQuery();
+           
             if (rs.next()){
                 String vidPath = rs.getString("video");
-                String[] args = new String[1];
+                String[] args = new String[1]; //passer un seul param
                 args[0] = vidPath;
-                VideoPlayer.main(args);
+                VideoPlayer.main(args); 
                 
             }
         }
@@ -237,16 +238,20 @@ int p = JOptionPane.showConfirmDialog(null,"voulez vous vraiment ajouter","Ajout
                                  // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-      close();
-      InterfaceCahier c=new InterfaceCahier();
-      c.setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_exitActionPerformed
-
     private void ListeAlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListeAlActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ListeAlActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+ String sql="delete from video where titre_video='"+jTextField2.getText()+"'";
+     try {
+         pst=connection.prepareStatement(sql);
+          pst.execute();
+     } catch (SQLException ex) {
+         Logger.getLogger(InterfaceVideo.class.getName()).log(Level.SEVERE, null, ex);
+     }
+           
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -290,10 +295,10 @@ int p = JOptionPane.showConfirmDialog(null,"voulez vous vraiment ajouter","Ajout
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox ListeAl;
-    private javax.swing.JButton exit;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -76,9 +76,22 @@ public class InterfaceAlbum extends javax.swing.JFrame {
         jFrame1 = new javax.swing.JFrame();
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        creation = new javax.swing.JButton();
+        voir = new javax.swing.JButton();
         listeAlbum = new javax.swing.JComboBox();
+        supprimer = new javax.swing.JButton();
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("annuler");
 
@@ -187,17 +200,17 @@ public class InterfaceAlbum extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Création d'un album");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        creation.setText("Création");
+        creation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                creationActionPerformed(evt);
             }
         });
 
-        jButton2.setText("voir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        voir.setText("voir ");
+        voir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                voirActionPerformed(evt);
             }
         });
 
@@ -207,20 +220,26 @@ public class InterfaceAlbum extends javax.swing.JFrame {
             }
         });
 
+        supprimer.setText("supprimer");
+        supprimer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supprimerActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(158, 158, 158)
-                .addComponent(jButton2)
-                .addContainerGap(191, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(listeAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
-                .addComponent(jButton1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(supprimer)
+                    .addComponent(voir)
+                    .addComponent(creation))
+                .addGap(0, 176, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,10 +247,12 @@ public class InterfaceAlbum extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(listeAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(creation))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addComponent(voir)
+                .addGap(43, 43, 43)
+                .addComponent(supprimer)
+                .addContainerGap(162, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -248,10 +269,10 @@ public class InterfaceAlbum extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void creationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creationActionPerformed
 jFrame2.setVisible(true);        // TODO add your handling code here:
 String sql = "SELECT * FROM album  WHERE a.id_album=v.id_album AND a.id_album=i.id_album";
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_creationActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 int p = JOptionPane.showConfirmDialog(null,"voulez vous vraiment ajouter","Ajout",JOptionPane.YES_NO_OPTION);
@@ -282,7 +303,7 @@ int p = JOptionPane.showConfirmDialog(null,"voulez vous vraiment ajouter","Ajout
         // TODO add your handling code here:
     }//GEN-LAST:event_listeAlbumActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void voirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voirActionPerformed
 jFrame1.setVisible(true);
    String sql="select * from video where id_album=?";
      
@@ -332,7 +353,28 @@ jFrame1.setVisible(true);
         
         
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_voirActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void supprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimerActionPerformed
+  String sql="delete from album where titre_album= ?";
+     try {
+         pst=connection.prepareStatement(sql);
+         pst.setString(1, listeAlbum.getSelectedItem()+"");
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "suppression effectuée avec succés");
+         
+     } catch (SQLException ex) {
+         Logger.getLogger(InterfaceVideo.class.getName()).log(Level.SEVERE, null, ex);
+     }        // TODO add your handling code here:
+    }//GEN-LAST:event_supprimerActionPerformed
 class PlayVideo implements ActionListener {
 
     private String vidpath;
@@ -388,8 +430,7 @@ class PlayVideo implements ActionListener {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton creation;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JFrame jFrame1;
@@ -402,5 +443,7 @@ class PlayVideo implements ActionListener {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JComboBox listeAlbum;
+    private javax.swing.JButton supprimer;
+    private javax.swing.JButton voir;
     // End of variables declaration//GEN-END:variables
 }

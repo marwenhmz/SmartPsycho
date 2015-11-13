@@ -19,9 +19,9 @@ public class Cahier {
    private String titre_cahier;
    private List<Video> videos;
     private List<Image> images;
-     private List<Statut> statuts;
+     private List<Cahierr> statuts;
 
-    public Cahier(int id_cahier, String date, String titre_cahier, List<Video> videos, List<Image> images, List<Statut> statuts) {
+    public Cahier(int id_cahier, String date, String titre_cahier, List<Video> videos, List<Image> images, List<Cahierr> statuts) {
         this.id_cahier = id_cahier;
         this.date = date;
         this.titre_cahier = titre_cahier;
@@ -50,7 +50,7 @@ public class Cahier {
         return images;
     }
 
-    public List<Statut> getStatuts() {
+    public List<Cahierr> getStatuts() {
         return statuts;
     }
 
@@ -74,7 +74,7 @@ public class Cahier {
         this.images = images;
     }
 
-    public void setStatuts(List<Statut> statuts) {
+    public void setStatuts(List<Cahierr> statuts) {
         this.statuts = statuts;
     }
 

@@ -6,7 +6,7 @@
 package com.esprit.dao;
 
 import com.esprit.entities.Image;
-import com.esprit.entities.Statut;
+import com.esprit.entities.Cahierr;
 import com.esprit.util.ConnectionBd;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,16 +20,16 @@ import java.util.List;
  *
  * @author Siwar
  */
-public class StatutDAO {
+public class CahierrDAO {
     
 Connection cnx;
 String requete;
     
-public StatutDAO()
+public CahierrDAO()
 {
         cnx = ConnectionBd.getInstance();
 }
-public void insertStatut(Statut s) 
+public void insertStatut(Cahierr s) 
 {
         String sql = "insert into statut (statut,titre_statut) values (?,?)";
         try {
@@ -45,7 +45,7 @@ public void insertStatut(Statut s)
         }
     
 public void DeleteStatut(String titre_statut) {
-        String sql = "delete from statut where _statut= ?";
+        String sql = "delete from statut where titre_statut= ?";
         try {
             PreparedStatement ps = cnx.prepareStatement(sql);
             ps.setString(1, titre_statut);
@@ -56,7 +56,7 @@ public void DeleteStatut(String titre_statut) {
             System.out.println("erreur lors de la suppression " + ex.getMessage());
         }
     }
-public void updateStatut(Statut s) {
+public void updateStatut(Cahierr s) {
         String sql ="UPDATE statut SET  statut=?  WHERE titre_statut= '"+s.getTitre_statut()+"'";
         try {
             PreparedStatement ps = cnx.prepareStatement(sql);
@@ -91,9 +91,9 @@ public void updateStatut(Statut s) {
             return null;
         }
     }
- public List<Statut> DisplayStatut() {
+ public List<Cahierr> DisplayStatut() {
 
-             List<Statut> listeDesStatut = new ArrayList<Statut>();
+             List<Cahierr> listeDesStatut = new ArrayList<Cahierr>();
 
         String requete = "select * from statut";
         try {
@@ -101,7 +101,7 @@ public void updateStatut(Statut s) {
             ResultSet resultat = statement.executeQuery(requete);
 
             while (resultat.next()) {
-                Statut statut = new Statut();
+                Cahierr statut = new Cahierr();
                 statut.setTitre_statut(resultat.getString(1));
             
 

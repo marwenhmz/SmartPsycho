@@ -6,10 +6,10 @@
 package com.esprit.TestMain;
 import com.esprit.dao.CahierDAO;
 import com.esprit.dao.ImageDAO;
-import com.esprit.dao.StatutDAO;
+import com.esprit.dao.CahierrDAO;
 import com.esprit.entities.Cahier;
 import com.esprit.entities.Image;
-import com.esprit.entities.Statut;
+import com.esprit.entities.Cahierr;
 import java.io.FileNotFoundException;
 import java.text.DateFormat;
 import java.util.logging.Level;
@@ -44,8 +44,8 @@ public static void main(String[] args) {
         
         
         
-       Statut s=new Statut();
-        StatutDAO sdao=new StatutDAO();
+       Cahierr s=new Cahierr();
+        CahierrDAO sdao=new CahierrDAO();
         s.setId_statut(2);
         s.setStatut("belle");
         s.setTitre_statut("siwar");

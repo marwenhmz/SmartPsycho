@@ -5,19 +5,19 @@
  */
 package com.esprit.gui;
 
-import com.esprit.dao.StatutDAO;
-import com.esprit.entities.Statut;
+import com.esprit.dao.CahierrDAO;
+import com.esprit.entities.Cahierr;
 
 /**
  *
  * @author Siwar
  */
-public class InterfaceStatut extends javax.swing.JFrame {
+public class InterfaceCahierr extends javax.swing.JFrame {
 
     /**
      * Creates new form InterfaceStatut
      */
-    public InterfaceStatut() {
+    public InterfaceCahierr() {
         initComponents();
     }
 
@@ -45,24 +45,24 @@ public class InterfaceStatut extends javax.swing.JFrame {
 
         jPanel3.setLayout(null);
 
-        jLabel3.setText("titre_staut");
+        jLabel3.setText("titre cahier");
         jPanel3.add(jLabel3);
         jLabel3.setBounds(20, 80, 70, 14);
 
-        jLabel4.setText("Statut");
+        jLabel4.setText("contenue");
         jPanel3.add(jLabel4);
         jLabel4.setBounds(20, 120, 80, 20);
         jPanel3.add(jTextField2);
-        jTextField2.setBounds(90, 70, 80, 40);
+        jTextField2.setBounds(90, 70, 200, 40);
 
-        jButton1.setText("ADD");
+        jButton1.setText("ajouter");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel3.add(jButton1);
-        jButton1.setBounds(20, 340, 53, 23);
+        jButton1.setBounds(20, 340, 100, 23);
 
         jButton2.setText("Show statut");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -73,25 +73,25 @@ public class InterfaceStatut extends javax.swing.JFrame {
         jPanel3.add(jButton2);
         jButton2.setBounds(20, 250, 100, 23);
         jPanel3.add(textArea1);
-        textArea1.setBounds(100, 120, 190, 120);
+        textArea1.setBounds(90, 120, 200, 120);
 
-        jButton3.setText("delete ");
+        jButton3.setText("supprimer");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         jPanel3.add(jButton3);
-        jButton3.setBounds(20, 280, 65, 23);
+        jButton3.setBounds(20, 280, 100, 23);
 
-        jButton4.setText("update");
+        jButton4.setText("modifier");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
         jPanel3.add(jButton4);
-        jButton4.setBounds(20, 310, 67, 23);
+        jButton4.setBounds(20, 310, 100, 23);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/esprit/gui/psy.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -115,8 +115,8 @@ public class InterfaceStatut extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-  StatutDAO sdao= new StatutDAO();
-  Statut s=new Statut();
+  CahierrDAO sdao= new CahierrDAO();
+  Cahierr s=new Cahierr();
   s.setId_statut(0);
   s.setTitre_statut(jTextField2.getText());
   s.setStatut(textArea1.getText());
@@ -126,8 +126,8 @@ public class InterfaceStatut extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-   StatutDAO sdao= new StatutDAO();     
-  Statut s=new Statut();
+   CahierrDAO sdao= new CahierrDAO();     
+  Cahierr s=new Cahierr();
   s.setId_statut(0);
   s.setTitre_statut(jTextField2.getText());
   s.setStatut(textArea1.getText());
@@ -135,8 +135,8 @@ public class InterfaceStatut extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        StatutDAO sdao= new StatutDAO();     
-  Statut s=new Statut();
+        CahierrDAO sdao= new CahierrDAO();     
+  Cahierr s=new Cahierr();
   s.setId_statut(0);
   s.setTitre_statut(jTextField2.getText());
   s.setStatut(textArea1.getText());
@@ -146,8 +146,8 @@ sdao.updateStatut(s);
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-         StatutDAO sdao= new StatutDAO();     
-  Statut s=new Statut();
+         CahierrDAO sdao= new CahierrDAO();     
+  Cahierr s=new Cahierr();
   s.setId_statut(0);
   s.setTitre_statut(jTextField2.getText());
   s.setStatut(textArea1.getText());
@@ -172,20 +172,21 @@ sdao.updateStatut(s);
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfaceStatut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceCahierr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfaceStatut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceCahierr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfaceStatut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceCahierr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InterfaceStatut.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceCahierr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfaceStatut().setVisible(true);
+                new InterfaceCahierr().setVisible(true);
             }
         });
     }
